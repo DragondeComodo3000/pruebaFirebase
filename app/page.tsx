@@ -1,3 +1,5 @@
+import BackendStatus from "./backend-status";
+
 const services = [
   {
     number: "01",
@@ -136,6 +138,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <BackendStatus />
 
         <section className="process" id="proceso">
           <div className="process-inner section-shell">

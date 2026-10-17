@@ -1,0 +1,25 @@
+.root {
+  width: min(1160px, calc(100% - 96px));
+  margin: 0 auto 96px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #dce5c8;
+  border-radius: 22px;
+  background: #f1f5e7;
+}
+
+.eyebrow { margin: 0 0 8px; color: #718043; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; }
+.title { margin: 0; color: #18312d; font-size: 24px; }
+.description { margin: 8px 0 0; color: #64716c; font-size: 13px; }
+.status { margin: 0; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; }
+.dot { width: 9px; height: 9px; flex: none; border-radius: 50%; background: currentColor; }
+.cargando { color: #64716c; }
+.conectado { color: #456d25; }
+.error { color: #a63832; }
+
+@media (max-width: 700px) {
+  .root { width: calc(100% - 40px); flex-direction: column; align-items: flex-start; padding: 24px; }
+}
