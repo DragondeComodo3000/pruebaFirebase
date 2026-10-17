@@ -41,6 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 
-#firebase
+# Firebase CLI debug logs can contain authentication tokens.
+/firebase-debug.log*
 
-firebase-debug.log
