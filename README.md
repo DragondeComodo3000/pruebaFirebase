@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NOVA
 
-## Getting Started
+Landing en Next.js con un catálogo de productos. El frontend se publica en Firebase Hosting y consulta una API Express alojada en Render.
 
-First, run the development server:
+## Ejecutar localmente
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Instala las dependencias con `npm install`.
+2. Copia `.env.example` a `.env.local`.
+3. Ejecuta `npm run dev` y abre `http://localhost:3000`.
+
+El archivo de ejemplo contiene la única variable necesaria para conectar el catálogo:
+
+```dotenv
+NEXT_PUBLIC_API_URL=https://backendupbtestme.onrender.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puedes cambiar la URL en tu `.env.local` si usas otro backend. Reinicia el servidor de desarrollo después de cambiarla. `.env.local` permanece fuera de Git.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Publicación
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`npm run build` genera la exportación estática en `out/`. Los workflows de GitHub Actions compilan y despliegan el sitio en Firebase Hosting. En ese build, `NEXT_PUBLIC_API_URL` se toma de la variable de repositorio de GitHub si existe; de lo contrario, se usa la URL pública de Render.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`NEXT_PUBLIC_API_URL` se incluye en el JavaScript del navegador durante el build, por lo que debe contener una URL pública, nunca una contraseña ni la cadena de conexión a PostgreSQL.
