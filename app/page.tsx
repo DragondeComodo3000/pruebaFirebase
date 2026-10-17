@@ -54,8 +54,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <main>
-        <section className="hero section-shell" id="inicio">
+      <main id="inicio">
+        <BackendStatus />
+
+        <section className="hero section-shell">
           <div className="hero-copy">
             <p className="eyebrow">
               <span className="eyebrow-dot" />
@@ -138,8 +140,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        <BackendStatus />
 
         <section className="process" id="proceso">
           <div className="process-inner section-shell">

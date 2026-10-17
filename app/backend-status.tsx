@@ -141,7 +141,7 @@ export default function BackendStatus() {
             CONEXIÓN EN VIVO
           </p>
           <h2 id="backend-title" className={styles.title}>
-            Ideas que toman <span>forma.</span>
+            Productos <span>en vivo.</span>
           </h2>
           <p className={styles.description}>
             Un pequeño catálogo conectado con nuestro backend en Render.
